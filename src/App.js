@@ -1,29 +1,24 @@
-import React, { Fragment, Component } from "react";
-import { Grid, MenuList, MenuItem } from "@material-ui/core";
-import Button from '@material-ui/core/Button';
+import React, { Fragment } from "react";
 
 import NavBar from './components/NavBar'
+import Sidebar from './components/Sidebar'
+
+const items = [
+  { name: 'home', label: 'Start' },
+  { name: 'dashboard', label: 'Übersicht' },
+  { name: 'projects', label: 'Projekte' },
+  { name: 'customer', label: 'Kunden' },
+  { name: 'employees', label: 'Mitarbeiter' },
+  { name: 'holidays', label: 'Urlaub' }
+]
 
 function App() {
   return (
-    <Fragment className="App">
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <NavBar />
-        </Grid>
-        <Grid item xs={12} sm={3}>
-          <nav className="App-text">
-            <MenuList>
-              <MenuItem>Übersicht</MenuItem>
-              <MenuItem>Projekte</MenuItem>
-              <MenuItem>Kunden</MenuItem>
-              <MenuItem>Mitarbeiter</MenuItem>
-              <MenuItem>Urlaubsplanung</MenuItem>
-            </MenuList>
-            <Button variant="contained" color="secondary">Firat Knopf</Button>
-          </nav>
-        </Grid>
-      </Grid>
+    <Fragment>
+      <NavBar />
+      <div className='content'>
+        <Sidebar items={items} />
+      </div>
     </Fragment>
   );
 }

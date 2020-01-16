@@ -9,7 +9,9 @@ const NavBar = () => {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="title" color="inherit">
-                    EBZ-GROUP
+                    <div className='bar'>
+                        EBZ-GROUP
+                    </div>
                 </Typography>
             </Toolbar>
         </AppBar>
